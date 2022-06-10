@@ -2,6 +2,7 @@ package com.fictivestudios.ravebae.activites
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.MenuItem
 import android.view.View
 import androidx.navigation.NavController
@@ -27,7 +28,35 @@ class MainActivity : BaseActivity() {
 
        // supportFragmentManager.beginTransaction().add(R.id.container,DiscoverFragment()).commit()
 
-        bottomBar.setActiveItem(1)
+
+        val navView = bottomBar
+
+
+
+
+        navView.setOnItemSelectedListener {
+            when (it.itemId) {
+                R.id.item0 -> {
+                    // handle click
+                    navController.navigate(R.id.activityFragment)
+
+                    true }
+                R.id.item1 -> {
+                    // handle click
+
+                    navController.navigate(R.id.discoverFragment2)
+                    true }
+                R.id.item2 -> {
+                    // handle click
+
+                    navController.navigate(R.id.messagesFragment)
+                    true }
+
+                else -> false
+            }
+        }
+
+    /*    bottomBar.setActiveItem(1)
 
         bottomBar.onItemSelected = {
 
@@ -37,18 +66,35 @@ class MainActivity : BaseActivity() {
             }
             else if(it==1)
             {
-                navController.navigate(R.id.discoverFragment)
+                navController.navigate(R.id.discoverFragment2)
             }
             else if (it==2)
             {
                 navController.navigate(R.id.messagesFragment)
             }
 
-        }
+        }*/
+
+
+    }
+    fun getFragmentCount(): Int {
+        return supportFragmentManager.backStackEntryCount
     }
 
     override fun onBackPressed() {
-        super.onBackPressed()
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.container)
+        val backStackEntryCount = navHostFragment?.childFragmentManager?.backStackEntryCount
+
+
+
+
+
+        if (backStackEntryCount == 0) {
+            Log.d("entry",backStackEntryCount.toString())
+            finish()
+        } else {
+            super.onBackPressed()
+        }
     }
 
     override fun setMainFrameLayoutID() {

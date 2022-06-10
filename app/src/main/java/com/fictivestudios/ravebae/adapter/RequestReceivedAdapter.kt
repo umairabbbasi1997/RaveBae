@@ -31,7 +31,6 @@ class RequestReceivedAdapter  : RecyclerView.Adapter<RequestReceivedAdapter.Prof
     override fun getItemCount() = users?.size ?: 10
 
     override fun onBindViewHolder(holder: ProfileViewHolder, position: Int) {
-      holder.itemView.iv_user.setBackgroundResource(R.drawable.user_dp)
 
         holder.itemView.iv_user.setOnClickListener {
             MainActivity.getMainActivity

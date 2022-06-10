@@ -46,7 +46,7 @@ class MyProfileFragment : BaseFragment() {
     }
 
     override fun setTitlebar(titlebar: Titlebar) {
-        titlebar.setBtnBack("",R.color.white)
+        titlebar.setBtnBack(getString(R.string.profile),resources.getColor(R.color.white))
         titlebar.showTitleBar()
     }
 

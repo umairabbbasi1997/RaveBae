@@ -53,11 +53,11 @@ class MessagesFragment : BaseFragment() {
 
         mView.rv_messages.adapter = MessagesAdapter()
 
-        mView.btn_write.setOnClickListener {
+      /*  mView.btn_write.setOnClickListener {
 
             MainActivity.getMainActivity
                 ?.navController?.navigate(R.id.conversationFragment)
-        }
+        }*/
         return mView
     }
 

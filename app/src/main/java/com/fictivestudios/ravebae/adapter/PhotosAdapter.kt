@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.fictivestudios.ravebae.R
 import com.fictivestudios.ravebae.activites.MainActivity
+import com.fictivestudios.ravebae.fragments.UserProfileFragment
 import kotlinx.android.synthetic.main.item_received.view.*
 import kotlinx.android.synthetic.main.item_swipe_card.view.*
 
@@ -31,6 +32,11 @@ class PhotosAdapter  : RecyclerView.Adapter<PhotosAdapter.ProfileViewHolder>() {
     override fun getItemCount() = users?.size ?: 10
 
     override fun onBindViewHolder(holder: ProfileViewHolder, position: Int) {
+
+        holder.itemView.setOnClickListener {
+            MainActivity.getMainActivity
+                ?.navController?.navigate(R.id.userProfileDetailFragment)
+        }
 
     }
 

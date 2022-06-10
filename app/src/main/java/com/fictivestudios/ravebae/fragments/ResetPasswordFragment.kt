@@ -1,14 +1,21 @@
 package com.fictivestudios.ravebae.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import com.fictivestudios.ravebae.R
+import com.fictivestudios.ravebae.activites.MainActivity
 import com.fictivestudios.ravebae.activites.ResgistrationActivity
+import com.fictivestudios.ravebae.utils.Constants
 import kotlinx.android.synthetic.main.fragment_forgot.view.*
+import kotlinx.android.synthetic.main.fragment_forgot.view.et_email
+import kotlinx.android.synthetic.main.fragment_login.view.*
 import kotlinx.android.synthetic.main.fragment_reset_password.view.*
+import kotlinx.android.synthetic.main.fragment_reset_password.view.et_pass
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -45,11 +52,40 @@ class ResetPasswordFragment : Fragment() {
 
         mView.btn_reset.setOnClickListener {
 
-            ResgistrationActivity.getRegActivity
-                ?.navControllerReg?.navigate(R.id.loginFragment)
+            validateFields()
         }
 
         return mView
+    }
+
+
+    private fun validateFields() {
+
+        if (mView.et_confirm_pass.text.toString().isNullOrBlank()&&
+            mView.et_pass.text.toString().isNullOrBlank()
+        )
+        {
+            Toast.makeText(context, getString(R.string.fields_cant_be_empty), Toast.LENGTH_SHORT).show()
+            return
+        }
+
+
+        if (mView.et_pass.text.toString().length <8 )
+        {
+            mView.et_pass.setError(getString(R.string.password_must_be))
+            return
+        }
+
+        if ( mView.et_confirm_pass.text.toString().length <8 )
+        {
+            mView.et_confirm_pass.setError(getString(R.string.password_must_be))
+            return
+        }
+        else
+        {
+            ResgistrationActivity.getRegActivity
+                ?.navControllerReg?.navigate(R.id.loginFragment)
+        }
     }
 
     companion object {

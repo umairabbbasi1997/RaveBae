@@ -8,6 +8,8 @@ import android.view.ViewGroup
 import com.fictivestudios.imdfitness.activities.fragments.BaseFragment
 import com.fictivestudios.ravebae.R
 import com.fictivestudios.ravebae.adapter.ConversationAdapter
+import com.fictivestudios.ravebae.model.Chat
+import com.fictivestudios.ravebae.utils.Constants
 import com.fictivestudios.ravebae.utils.Titlebar
 import kotlinx.android.synthetic.main.fragment_conversation.view.*
 
@@ -38,7 +40,7 @@ class ConversationFragment : BaseFragment() {
     }
 
     override fun setTitlebar(titlebar: Titlebar) {
-        titlebar.setBtnBack("Natasha",R.color.purple)
+        titlebar.setProfileBtn("Natasha")
         titlebar.showTitleBar()
     }
 
@@ -50,7 +52,14 @@ class ConversationFragment : BaseFragment() {
 
         mView = inflater.inflate(R.layout.fragment_conversation, container, false)
 
-        mView.rv_conversation.adapter = ConversationAdapter()
+        var chatList=ArrayList<Chat>()
+
+        chatList.add(Chat("Hi",Constants.VIEW_TYPE_MESSAGE_RECEIVED))
+        chatList.add(Chat("Hello",Constants.VIEW_TYPE_MESSAGE_SENT))
+        chatList.add(Chat("How are you..?",Constants.VIEW_TYPE_MESSAGE_RECEIVED))
+        chatList.add(Chat("Fine what about you..?",Constants.VIEW_TYPE_MESSAGE_SENT))
+
+        mView.rv_conversation.adapter = ConversationAdapter(chatList)
 
         return mView
     }

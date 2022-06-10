@@ -114,6 +114,19 @@
             >
 
         </EditText>
+
+        <ImageView
+            android:id="@+id/iv_show_pass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="25dp"
+            android:src="@drawable/ic_baseline_visibility_24"
+            app:layout_constraintRight_toRightOf="@id/et_pass"
+            app:layout_constraintTop_toTopOf="@id/et_pass"
+            app:layout_constraintBottom_toBottomOf="@id/et_pass"
+            app:tint="@color/white">
+
+        </ImageView>
         <EditText
             android:id="@+id/et_confirm_pass"
             android:layout_width="match_parent"
@@ -131,6 +144,18 @@
             >
 
         </EditText>
+        <ImageView
+            android:id="@+id/iv_show_repeat_pass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="25dp"
+            android:src="@drawable/ic_baseline_visibility_24"
+            app:layout_constraintRight_toRightOf="@id/et_confirm_pass"
+            app:layout_constraintTop_toTopOf="@id/et_confirm_pass"
+            app:layout_constraintBottom_toBottomOf="@id/et_confirm_pass"
+            app:tint="@color/white">
+
+        </ImageView>
         <EditText
             android:id="@+id/et_number"
             android:layout_width="match_parent"
@@ -167,7 +192,7 @@
 
 
 
-        <TextView
+     <!--   <TextView
             android:id="@+id/tv_signup_with"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -207,7 +232,7 @@
             app:layout_constraintRight_toRightOf="@id/tv_signup_with"
             >
 
-        </ImageView>
+        </ImageView>-->
 
 
 

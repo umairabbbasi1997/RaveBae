@@ -7,10 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import com.fictivestudios.imdfitness.activities.fragments.BaseFragment
 import com.fictivestudios.ravebae.R
+import com.fictivestudios.ravebae.activites.MainActivity
 import com.fictivestudios.ravebae.adapter.PlaylistAdapter
 import com.fictivestudios.ravebae.adapter.SpotifyAdapter
 import com.fictivestudios.ravebae.utils.Titlebar
+import kotlinx.android.synthetic.main.fragment_edit_profile.view.*
 import kotlinx.android.synthetic.main.fragment_preferences.view.*
+import kotlinx.android.synthetic.main.fragment_preferences.view.btn_save_changes
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -65,6 +68,11 @@ class PreferencesFragment : BaseFragment() {
                 mView.btn_couple.setBackgroundResource(R.drawable.round_button_white_bg)
                 mView.btn_couple.setTextColor(resources.getColor(R.color.gray))
             }
+        }
+
+
+        mView.btn_save_changes.setOnClickListener {
+            MainActivity.getMainActivity?.onBackPressed()
         }
 
         mView.btn_female.setOnClickListener {

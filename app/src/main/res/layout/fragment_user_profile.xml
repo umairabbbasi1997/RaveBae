@@ -60,17 +60,32 @@
 
                     </ImageView>-->
 
-                    <org.imaginativeworld.whynotimagecarousel.ImageCarousel
+<!--                    <org.imaginativeworld.whynotimagecarousel.ImageCarousel-->
+<!--                        android:id="@+id/carousel"-->
+<!--                        app:showBottomShadow="true"-->
+<!--                        app:bottomShadowAlpha="0.6"-->
+<!--                        app:bottomShadowHeight="64dp"-->
+<!--                        app:showCaption="false"-->
+<!--                        app:showIndicator="true"-->
+<!--                        app:showNavigationButtons="false"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="match_parent" />-->
+
+
+
+
+                    <ImageView
                         android:id="@+id/carousel"
                         app:showBottomShadow="true"
                         app:bottomShadowAlpha="0.6"
                         app:bottomShadowHeight="64dp"
                         app:showCaption="false"
                         app:showIndicator="true"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/user_dp"
                         app:showNavigationButtons="false"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent" />
-
                     <TextView
                         android:id="@+id/tv_name"
                         android:layout_width="wrap_content"
@@ -169,6 +184,22 @@
                 >
 
             </androidx.recyclerview.widget.RecyclerView>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_chat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:layout_marginHorizontal="10dp"
+                android:text="@string/chat"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:background="@drawable/round_button_bg"
+                app:layout_constraintTop_toBottomOf="@id/rv_spotify"
+
+                >
+
+            </androidx.appcompat.widget.AppCompatButton>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
         </ScrollView>

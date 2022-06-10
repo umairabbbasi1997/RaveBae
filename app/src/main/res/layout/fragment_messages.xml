@@ -23,7 +23,7 @@
 
     </androidx.recyclerview.widget.RecyclerView>
 
-    <ImageView
+    <!--<ImageView
         android:id="@+id/btn_write"
         android:layout_width="50dp"
         android:layout_height="50dp"
@@ -37,7 +37,7 @@
         app:layout_constraintRight_toRightOf="parent"
         >
 
-    </ImageView>
+    </ImageView>-->
     
 
 </androidx.constraintlayout.widget.ConstraintLayout>

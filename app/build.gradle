@@ -46,8 +46,8 @@ dependencies {
     //circle image
     implementation 'de.hdodenhof:circleimageview:3.1.0'
 
-    //splash screen
-    implementation 'androidx.core:core-splashscreen:1.0.0-beta01'
+/*    //splash screen
+    implementation 'androidx.core:core-splashscreen:1.0.0-beta01'*/
 
 
     //card swipe
@@ -81,5 +81,6 @@ dependencies {
     //image slide
     implementation 'org.imaginativeworld.whynotimagecarousel:whynotimagecarousel:2.1.0'
 
-    //image picker
-    implementation 'com.github.dhaval2404:imagepicker:2.1'}
+        //image picker
+        implementation 'com.github.dhaval2404:imagepicker:2.1'
+}

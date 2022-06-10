@@ -59,7 +59,7 @@
             android:layout_marginTop="20dp"
             android:hint="@string/enter_code"
             android:textColorHint="@color/white"
-            android:gravity="center"
+           android:paddingLeft="20dp"
             android:inputType="number"
             android:textColor="@color/white"
             android:background="@drawable/round_edittext_bg"

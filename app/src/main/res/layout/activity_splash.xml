@@ -8,17 +8,15 @@
     tools:context=".activites.SplashActivity">
 
     <ImageView
-        android:layout_width="170dp"
-        android:layout_height="140dp"
-        android:background="@drawable/splash_logo"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
         android:layout_marginBottom="100dp"
+        android:src="@drawable/main_logo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         >
 
-
     </ImageView>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

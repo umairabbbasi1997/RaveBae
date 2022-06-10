@@ -1,7 +1,8 @@
 package com.fictivestudios.ravebae.activites
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.fictivestudios.ravebae.R
@@ -22,5 +23,26 @@ class ResgistrationActivity : AppCompatActivity() {
     }
     companion object{
         var getRegActivity: ResgistrationActivity? =null
+    }
+
+    fun getFragmentCount(): Int {
+        return supportFragmentManager.backStackEntryCount
+    }
+
+    override fun onBackPressed() {
+
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.container_reg)
+        val backStackEntryCount = navHostFragment?.childFragmentManager?.backStackEntryCount
+
+
+
+
+
+        if (backStackEntryCount == 1) {
+            Log.d("entry",backStackEntryCount.toString())
+          finish()
+        } else {
+            super.onBackPressed()
+        }
     }
 }

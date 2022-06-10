@@ -11,9 +11,15 @@ import android.view.ViewGroup
 import android.widget.Toast
 import com.fictivestudios.imdfitness.activities.fragments.BaseFragment
 import com.fictivestudios.ravebae.R
+import com.fictivestudios.ravebae.activites.MainActivity
 import com.fictivestudios.ravebae.utils.Titlebar
 import com.github.dhaval2404.imagepicker.ImagePicker
+import kotlinx.android.synthetic.main.fragment_edit_profile.view.*
 import kotlinx.android.synthetic.main.fragment_my_profile.view.*
+import kotlinx.android.synthetic.main.fragment_my_profile.view.btn_edit_cover
+import kotlinx.android.synthetic.main.fragment_my_profile.view.btn_edit_image
+import kotlinx.android.synthetic.main.fragment_my_profile.view.iv_cover
+import kotlinx.android.synthetic.main.fragment_my_profile.view.iv_profile_image
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -64,6 +70,10 @@ class EditProfileFragment : BaseFragment() {
 
             isImage = true
             openImagePicker()
+        }
+
+        mView.btn_save_changes.setOnClickListener {
+            MainActivity.getMainActivity?.onBackPressed()
         }
 
 

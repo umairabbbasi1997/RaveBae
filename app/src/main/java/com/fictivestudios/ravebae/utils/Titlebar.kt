@@ -1,6 +1,7 @@
 package com.fictivestudios.ravebae.utils
 
 import android.content.Context
+import android.graphics.Color
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
@@ -71,6 +72,7 @@ class Titlebar : RelativeLayout {
     fun setHomeTitle(titleText:String)
     {
         mView?.tvTitle?.text = titleText
+        mView?.tvTitle?.setTextColor(Color.parseColor("#6500FA"))
         mView?.btn_left.setImageResource(R.drawable.settings_icon)
         mView?.btn_profile.setImageResource(R.drawable.user_icon)
         mView?.btn_profile.visibility=View.VISIBLE
@@ -93,8 +95,10 @@ class Titlebar : RelativeLayout {
     fun setBtnBack( titleText:String,colorId:Int) {
 
         mView?.tvTitle?.text = titleText
+        mView?.tvTitle?.setTextColor(colorId)
         mView?.btn_left.setImageResource(R.drawable.back_arrow_icon)
         mView?.btn_profile.visibility=View.INVISIBLE
+
 
         MainActivity.getMainActivity?.hideBottomBar()
         mView?.btn_left!!.setOnClickListener {
@@ -103,6 +107,26 @@ class Titlebar : RelativeLayout {
         }
     }
 
+    fun setProfileBtn(titleText:String)
+    {
+        mView?.tvTitle?.text = titleText
+        mView?.btn_left.setImageResource(R.drawable.back_arrow_icon)
+        mView?.btn_profile.visibility=View.GONE
+        mView?.btn_user_profile.visibility=View.VISIBLE
+
+        mView?.btn_left!!.setOnClickListener {
+
+            MainActivity.getMainActivity?.onBackPressed()
+        }
+        mView?.btn_user_profile!!.setOnClickListener {
+
+            MainActivity.getMainActivity?.navController
+                ?.navigate(R.id.userProfileFragment)
+        }
+
+        MainActivity.getMainActivity?.hideBottomBar()
+
+    }
 
 /*    fun setBtnBack( listener: OnClickListener?) {
 

@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.fictivestudios.imdfitness.activities.fragments.BaseFragment
 import com.fictivestudios.ravebae.R
+import com.fictivestudios.ravebae.activites.MainActivity
 import com.fictivestudios.ravebae.adapter.PhotosAdapter
 import com.fictivestudios.ravebae.adapter.SpotifyAdapter
 import com.fictivestudios.ravebae.utils.Titlebar
@@ -51,32 +52,37 @@ class UserProfileFragment : BaseFragment() {
 
         mView = inflater.inflate(R.layout.fragment_user_profile, container, false)
 
-        mView.carousel.registerLifecycle(lifecycle)
-        val list = mutableListOf<CarouselItem>()
+        mView.btn_chat.setOnClickListener {
+            MainActivity.getMainActivity
+                ?.navController?.navigate(R.id.conversationFragment)
+        }
 
+     //   mView.carousel.registerLifecycle(lifecycle)
+     //   val list = mutableListOf<CarouselItem>()
 
-        list.add(
-            CarouselItem(
-                imageDrawable = R.drawable.user_dp,
-                caption = ""
-            )
-        )
+//
+//        list.add(
+//            CarouselItem(
+//                imageDrawable = R.drawable.user_dp,
+//                caption = ""
+//            )
+//        )
+//
+//        list.add(
+//            CarouselItem(
+//                imageDrawable = R.drawable.user_dp,
+//                caption = ""
+//            )
+//        )
+//
+//        list.add(
+//            CarouselItem(
+//                imageDrawable = R.drawable.user_dp,
+//                caption = ""
+//            )
+//        )
 
-        list.add(
-            CarouselItem(
-                imageDrawable = R.drawable.user_dp,
-                caption = ""
-            )
-        )
-
-        list.add(
-            CarouselItem(
-                imageDrawable = R.drawable.user_dp,
-                caption = ""
-            )
-        )
-
-        mView.carousel.setData(list)
+       // mView.carousel.setData(list)
 
         mView.rv_spotify.adapter = SpotifyAdapter()
         mView.rv_photos.adapter = PhotosAdapter()

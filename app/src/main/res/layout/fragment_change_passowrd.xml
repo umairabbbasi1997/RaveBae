@@ -19,7 +19,6 @@
         >
 
     </ImageView>
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -53,7 +52,7 @@
             android:layout_marginTop="20dp"
             android:nextFocusDown="@string/new_pass"
             android:hint="@string/old_pass"
-            android:gravity="center"
+            android:paddingLeft="20dp"
             android:inputType="textPassword"
             android:textColorHint="@color/white"
             android:textColor="@color/white"
@@ -63,6 +62,21 @@
             >
 
         </EditText>
+
+        <ImageView
+            android:id="@+id/iv_show_pass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="25dp"
+            android:src="@drawable/ic_baseline_visibility_24"
+            app:layout_constraintRight_toRightOf="@id/et_old_pass"
+            app:layout_constraintTop_toTopOf="@id/et_old_pass"
+            app:layout_constraintBottom_toBottomOf="@id/et_old_pass"
+            app:tint="@color/white">
+
+        </ImageView>
+
+
         <EditText
             android:id="@+id/et_new_pass"
             android:layout_width="match_parent"
@@ -73,13 +87,28 @@
             android:inputType="textPassword"
             android:textColorHint="@color/white"
             android:textColor="@color/white"
-            android:gravity="center"
+            android:paddingLeft="20dp"
             android:background="@drawable/round_edittext_bg"
             app:layout_constraintTop_toBottomOf="@id/et_old_pass"
 
             >
 
         </EditText>
+
+        <ImageView
+            android:id="@+id/iv_show_new_pass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="25dp"
+            android:src="@drawable/ic_baseline_visibility_24"
+            app:layout_constraintRight_toRightOf="@id/et_new_pass"
+            app:layout_constraintTop_toTopOf="@id/et_new_pass"
+            app:layout_constraintBottom_toBottomOf="@id/et_new_pass"
+            app:tint="@color/white">
+
+        </ImageView>
+
+
         <EditText
             android:id="@+id/et_reenter_pass"
             android:layout_width="match_parent"
@@ -90,15 +119,29 @@
             android:inputType="textPassword"
             android:textColorHint="@color/white"
             android:textColor="@color/white"
-            android:gravity="center"
+            android:paddingLeft="20dp"
             android:background="@drawable/round_edittext_bg"
             app:layout_constraintTop_toBottomOf="@id/et_new_pass"
 
             >
 
         </EditText>
+
+        <ImageView
+            android:id="@+id/iv_show_repeat_pass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="25dp"
+            android:src="@drawable/ic_baseline_visibility_24"
+            app:layout_constraintRight_toRightOf="@id/et_reenter_pass"
+            app:layout_constraintTop_toTopOf="@id/et_reenter_pass"
+            app:layout_constraintBottom_toBottomOf="@id/et_reenter_pass"
+            app:tint="@color/white">
+
+        </ImageView>
+
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_login"
+            android:id="@+id/btn_save"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"

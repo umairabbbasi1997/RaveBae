@@ -43,7 +43,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:layout_marginHorizontal="35dp"
         app:layout_constraintTop_toBottomOf="@id/logo"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -83,6 +83,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:text="@string/geo_location"
+                android:textAllCaps="true"
                 android:textColor="@color/white"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
@@ -95,6 +96,7 @@
             <androidx.appcompat.widget.SwitchCompat
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+
                 app:trackTint="@color/white"
                 app:thumbTint="@color/black"
                 android:backgroundTint="@color/white"
@@ -121,6 +123,7 @@
                 android:id="@+id/tv_push_notifi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textAllCaps="true"
                 android:layout_marginLeft="5dp"
                 android:text="@string/push_notification"
                 android:textColor="@color/white"
@@ -194,12 +197,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:layout_marginBottom="40dp"
+            android:layout_marginBottom="30dp"
             android:background="@drawable/round_button_bg"
             android:gravity="center"
             android:text="@string/logout"
             android:textColor="@color/white"
-            app:layout_constraintTop_toBottomOf="@id/btn_change_pas"
+            app:layout_constraintBottom_toBottomOf="parent"
             >
 
         </androidx.appcompat.widget.AppCompatButton>

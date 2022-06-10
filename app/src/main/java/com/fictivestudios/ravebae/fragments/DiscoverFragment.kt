@@ -62,7 +62,7 @@ class DiscoverFragment : BaseFragment() , CardStackListener {
         mView = inflater.inflate(R.layout.fragment_discover, container, false)
 
 
-        MainActivity.getMainActivity?.bottomBar?.setActiveItem(1)
+//        MainActivity.getMainActivity?.bottomBar?.setActiveItem(1)
 
         layoutManager = CardStackLayoutManager(requireContext(), this).apply {
             setSwipeableMethod(SwipeableMethod.AutomaticAndManual)

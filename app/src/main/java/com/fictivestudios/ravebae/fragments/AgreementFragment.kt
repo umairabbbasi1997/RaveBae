@@ -16,6 +16,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import com.fictivestudios.imdfitness.activities.fragments.BaseFragment
@@ -65,6 +66,7 @@ class AgreementFragment : BaseFragment() {
 
         mView = inflater.inflate(R.layout.fragment_agreement, container, false)
 
+/*
 
         makeTextLink(mView.tv_i_have_read,"Terms & conditions"
         ,true,R.color.white,
@@ -76,30 +78,43 @@ class AgreementFragment : BaseFragment() {
             ,true,R.color.white,
             {                ResgistrationActivity.getRegActivity
                 ?.navControllerReg?.navigate(R.id.privacyAndPolicyFragment)})
+*/
 
         mView.btn_i_agree.setOnClickListener {
 
-            if (Constants.loginType == EMAIL)
+            if (mView.term_radio.isChecked && mView.privacy_radio.isChecked)
             {
+                if (Constants.loginType == EMAIL)
+                {
 
-                ResgistrationActivity.getRegActivity
-                    ?.navControllerReg?.navigate(R.id.loginFragment)
+                    ResgistrationActivity.getRegActivity
+                        ?.navControllerReg?.navigate(R.id.loginFragment)
+                }
+                else if (Constants.loginType == PHONE)
+                {
+                    ResgistrationActivity.getRegActivity
+                        ?.navControllerReg?.navigate(R.id.loginWithPhoneFragment)
+                }
             }
-            else if (Constants.loginType == PHONE)
-            {
-                 ResgistrationActivity.getRegActivity
-                    ?.navControllerReg?.navigate(R.id.otpFragment)
+            else{
+                Toast.makeText(context, "Please accept both", Toast.LENGTH_SHORT).show()
             }
+
+
         }
 
 
 
+        mView.btn_reject.setOnClickListener {
+
+            ResgistrationActivity.getRegActivity?.onBackPressed()
+        }
 
         return mView
     }
 
 
-    @RequiresApi(Build.VERSION_CODES.M)
+   /* @RequiresApi(Build.VERSION_CODES.M)
     private fun makeTextLink(textView: TextView, str: String, underlined: Boolean, color: Int?, action: (() -> Unit)? = null) {
         val spannableString = SpannableString(textView.text)
         val textColor = color ?: textView.currentTextColor
@@ -121,7 +136,7 @@ class AgreementFragment : BaseFragment() {
         textView.highlightColor = Color.WHITE
 
     }
-
+*/
     companion object {
         /**
          * Use this factory method to create a new instance of

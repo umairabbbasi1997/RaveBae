@@ -5,8 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import com.fictivestudios.imdfitness.activities.fragments.BaseFragment
 
 
-
-
 abstract class BaseActivity : AppCompatActivity() {
 
     var baseFragment: BaseFragment? = null
@@ -26,9 +24,9 @@ abstract class BaseActivity : AppCompatActivity() {
             addDataToList()
         }*/
 
+
+
         }
-
-
 
 
 

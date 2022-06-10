@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.cardview.widget.CardView
@@ -13,13 +14,13 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         >
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/white_layout_shade"
             android:padding="10dp"
-            app:layout_constraintTop_toTopOf="parent"
-            >
+            app:layout_constraintTop_toTopOf="parent">
 
 
             <de.hdodenhof.circleimageview.CircleImageView
@@ -27,38 +28,35 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:src="@drawable/user_dp"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                >
-            </de.hdodenhof.circleimageview.CircleImageView>
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"></de.hdodenhof.circleimageview.CircleImageView>
 
             <TextView
                 android:id="@+id/tv_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
                 android:text="Natasha Romanoff"
                 android:textColor="@color/black"
                 android:textSize="14sp"
-                android:layout_marginLeft="10dp"
                 app:layout_constraintBottom_toTopOf="@id/tv_message"
                 app:layout_constraintLeft_toRightOf="@id/iv_user"
-                app:layout_constraintTop_toTopOf="parent"
-                >
+                app:layout_constraintTop_toTopOf="parent">
 
             </TextView>
+
             <TextView
                 android:id="@+id/tv_message"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Hi how are you?"
-
-                android:textSize="12sp"
                 android:layout_marginLeft="10dp"
-                app:layout_constraintLeft_toRightOf="@id/iv_user"
-                app:layout_constraintTop_toBottomOf="@id/tv_name"
+
+                android:text="Hi how are you?"
+                android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                >
+                app:layout_constraintLeft_toRightOf="@id/iv_user"
+                app:layout_constraintTop_toBottomOf="@id/tv_name">
 
             </TextView>
 
@@ -66,27 +64,25 @@
                 android:id="@+id/tv_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Yesterday"
-
-                android:textSize="10sp"
                 android:layout_marginLeft="10dp"
+
+                android:text="Yesterday"
+                android:textSize="10sp"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                >
+                app:layout_constraintTop_toTopOf="parent">
 
             </TextView>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:layout_width="18dp"
                 android:layout_height="18dp"
+                android:background="@drawable/round_button_bg"
                 android:text="1"
                 android:textColor="@color/white"
                 android:textSize="7sp"
-                android:background="@drawable/round_button_bg"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_date"
                 app:layout_constraintBottom_toBottomOf="parent"
-                >
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_date">
 
             </androidx.appcompat.widget.AppCompatButton>
 

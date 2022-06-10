@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import com.fictivestudios.imdfitness.activities.fragments.BaseFragment
 import com.fictivestudios.ravebae.R
 import com.fictivestudios.ravebae.activites.MainActivity
@@ -64,13 +65,41 @@ class OtpFragment : BaseFragment() {
             if (Constants.isAccountLogin)
             {
 
-                startActivity(Intent(requireContext(),MainActivity::class.java))
-                ResgistrationActivity.getRegActivity?.finish()
+                if (mView.et_otp.text.toString().isNullOrBlank()
+                )
+                {
+                    Toast.makeText(context, getString(R.string.fields_cant_be_empty), Toast.LENGTH_SHORT).show()
+
+                }
+
+
+
+
+                else
+                {
+
+                    startActivity(Intent(requireContext(),MainActivity::class.java))
+                    ResgistrationActivity.getRegActivity?.finish()
+                }
+
+
             }
             else
             {
-                ResgistrationActivity.getRegActivity?.navControllerReg
-                    ?.navigate(R.id.resetPasswordFragment)
+                if (mView.et_otp.text.toString().isNullOrBlank()
+                )
+                {
+                    Toast.makeText(context, getString(R.string.fields_cant_be_empty), Toast.LENGTH_SHORT).show()
+
+                }
+                else
+                {
+                    ResgistrationActivity.getRegActivity?.navControllerReg
+                        ?.navigate(R.id.resetPasswordFragment)
+                }
+
+
+
             }
         }
 

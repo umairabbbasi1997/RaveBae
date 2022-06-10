@@ -63,6 +63,19 @@
 
         </EditText>
 
+        <ImageView
+            android:id="@+id/iv_show_pass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="25dp"
+            android:src="@drawable/ic_baseline_visibility_24"
+            app:layout_constraintRight_toRightOf="@id/et_pass"
+            app:layout_constraintTop_toTopOf="@id/et_pass"
+            app:layout_constraintBottom_toBottomOf="@id/et_pass"
+            app:tint="@color/white">
+
+        </ImageView>
+
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_login"
             android:layout_width="match_parent"
@@ -99,7 +112,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="40dp"
-            android:layout_marginRight="20dp"
+
             android:text="@string/dont_have_account"
             android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -108,7 +121,7 @@
             >
 
         </TextView>
-        <TextView
+<!--        <TextView
             android:id="@+id/tv_signup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -120,7 +133,7 @@
             app:layout_constraintLeft_toRightOf="@id/tv_dont_have_acc"
             >
 
-        </TextView>
+        </TextView>-->
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

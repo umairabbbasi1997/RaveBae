@@ -18,6 +18,7 @@
     </de.hdodenhof.circleimageview.CircleImageView>
 
     <TextView
+        android:id="@+id/tv_text_received"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:minHeight="50dp"
@@ -26,7 +27,7 @@
         android:elevation="10dp"
         android:layout_marginBottom="5dp"
         android:layout_marginTop="5dp"
-        android:gravity="center_vertical"
+        android:gravity="right|center_vertical"
         android:paddingHorizontal="20dp"
         android:textSize="13dp"
         android:layout_marginRight="10dp"

@@ -4,23 +4,33 @@ import android.app.Activity
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.text.method.PasswordTransformationMethod
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import com.fictivestudios.imdfitness.activities.fragments.BaseFragment
 import com.fictivestudios.ravebae.R
 import com.fictivestudios.ravebae.activites.ResgistrationActivity
 import com.fictivestudios.ravebae.utils.Constants
 import com.fictivestudios.ravebae.utils.Titlebar
 import com.github.dhaval2404.imagepicker.ImagePicker
+import kotlinx.android.synthetic.main.fragment_login.view.*
+import kotlinx.android.synthetic.main.fragment_signup.*
 import kotlinx.android.synthetic.main.fragment_signup.view.*
+import kotlinx.android.synthetic.main.fragment_signup.view.et_email
+import kotlinx.android.synthetic.main.fragment_signup.view.et_pass
+import kotlinx.android.synthetic.main.fragment_signup.view.iv_show_pass
+import java.util.regex.Pattern
+
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
+private var isShowPass=false
+private var isShowRepeatPass=false
 
 /**
  * A simple [Fragment] subclass.
@@ -68,6 +78,38 @@ class SignupFragment : BaseFragment() {
             openImagePicker()
         }
 
+        mView.iv_show_pass.setOnClickListener {
+            if (isShowPass)
+            {
+                isShowPass = false
+                iv_show_pass.setImageResource(R.drawable.ic_baseline_visibility_24)
+                mView.et_pass.transformationMethod = PasswordTransformationMethod()
+            }
+            else
+            {
+                isShowPass = true
+                iv_show_pass.setImageResource(R.drawable.ic_baseline_visibility_off_24)
+                mView.et_pass.transformationMethod = null
+            }
+
+        }
+
+        mView.iv_show_repeat_pass.setOnClickListener {
+            if (isShowRepeatPass)
+            {
+                isShowRepeatPass = false
+                iv_show_repeat_pass.setImageResource(R.drawable.ic_baseline_visibility_24)
+                mView.et_confirm_pass.transformationMethod = PasswordTransformationMethod()
+            }
+            else
+            {
+                isShowRepeatPass = true
+                iv_show_repeat_pass.setImageResource(R.drawable.ic_baseline_visibility_off_24)
+                mView.et_confirm_pass.transformationMethod = null
+            }
+
+        }
+
         return mView
 
     }
@@ -83,32 +125,44 @@ class SignupFragment : BaseFragment() {
 
     private fun validateFields() {
 
-        if (mView.et_username.text.toString().isNullOrBlank()||
-            mView.et_email.text.toString().isNullOrBlank()||
-            mView.et_pass.text.toString().isNullOrBlank()||
-            mView.et_confirm_pass.text.toString().isNullOrBlank()
-        )
-        {
-            Toast.makeText(context, getString(R.string.fields_cant_be_empty), Toast.LENGTH_SHORT).show()
-            return
-        }
+
+
 
         if (!Constants.isValidEmail(mView.et_email.text.toString()))
         {
             mView.et_email.setError(getString(R.string.invalid_email_format))
             return
         }
-        if (mView.et_pass.text.toString().length <8 )
+        if (!mView.et_pass.text.toString().isValidPassword() )
         {
             mView.et_pass.setError(getString(R.string.password_must_be))
             return
         }
+
         if (mView.et_pass.text.toString() != mView.et_confirm_pass.text.toString() )
         {
             mView.et_confirm_pass.setError(getString(R.string.confirm_pass_doesnt_match))
 
             return
         }
+        if (
+            mView.et_number.text.toString().isNullOrBlank()
+        )
+        {
+            mView.et_number.setError(getString(R.string.fields_cant_be_empty))
+
+            return
+        }
+
+        if (
+            mView.et_username.text.toString().isNullOrBlank()
+        )
+        {
+            mView.et_username.setError(getString(R.string.fields_cant_be_empty))
+
+            return
+        }
+
 
         else
         {
@@ -134,6 +188,15 @@ class SignupFragment : BaseFragment() {
             Toast.makeText(requireContext(), "Task Cancelled", Toast.LENGTH_SHORT).show()
         }
     }
+
+
+    fun CharSequence.isValidPassword(): Boolean {
+        val passwordPattern = "^(?=.*[0-9])(?=.*[A-Z])(?=.*[@#$%^&+=!])(?=\\S+$).{4,}$"
+        val pattern = Pattern.compile(passwordPattern)
+        val matcher = pattern.matcher(this)
+        return matcher.matches()
+    }
+
 
     companion object {
         /**
